@@ -72,9 +72,11 @@ briantat.get("/", function (req, res){
 });
 
 var app = module.exports = express();
+app.use(vhost('localhost', tatillia));
 app.use(vhost('*.tatillia.com', tatillia));
 app.use(vhost('*.briantat.ca', briantat));
-app.use(express.static('briantat'))
+app.use(express.static('briantat'));
+app.use(express.static('tatillia'));
 
 app.listen(port, '0.0.0.0', () =>{
     console.log("Server running on port " + port);
