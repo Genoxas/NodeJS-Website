@@ -14,7 +14,7 @@ var port = 8080;
 var path = require('path');
 
 
-var serviceAccount = require("./serviceAccountKey.json");
+var serviceAccount = require("./resources/serviceAccountKey.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
